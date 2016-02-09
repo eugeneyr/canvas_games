@@ -70,7 +70,7 @@ var scoreEl = document.getElementById('score');
 // Speed in pixels per second
 var playerSpeed = 200;
 var bulletSpeed = 500;
-var enemySpeed = 100;
+var enemySpeed = 300; // 100
 
 // Update game objects
 function update(dt) {
@@ -81,14 +81,16 @@ function update(dt) {
 
     // It gets harder over time by adding enemies using this
     // equation: 1-.993^gameTime
-    if (Math.random() < 1 - Math.pow(.993, gameTime)) {
+    if (Math.random() < 1 - Math.pow(.993, gameTime)) { //.993
         enemies.push({
             pos: [canvas.width,
                 Math.random() * (canvas.height - 39)],
-            sprite: new Sprite('img/sprites.png', [0, 78], [80, 39],
-                6, [0, 1, 2, 3, 2, 1])
+            sprite: new Sprite('img/sprites.png', [0, 0], [39, 39],
+                16, [0, 1])
         });
     }
+    //sprite: new Sprite('img/sprites.png', [0, 78], [80, 39],
+    //    6, [0, 1, 2, 3, 2, 1])
 
     checkCollisions();
 
@@ -220,7 +222,7 @@ function checkCollisions() {
                 i--;
 
                 // Add score
-                score += 100;
+                score += 9001;
 
                 // Add an explosion
                 explosions.push({

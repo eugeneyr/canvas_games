@@ -7,8 +7,13 @@
 
         switch (code) {
             case 32:
-                key = 'SPACE';
+                key = 'UP';
                 break;
+            //case 32:
+            //     key = 'SPACE';
+            //    break;
+
+
             case 37:
                 key = 'LEFT';
                 break;
